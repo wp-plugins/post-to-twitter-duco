@@ -14,6 +14,9 @@ $(document).ready(function(){
 <form method="post" action="options.php" id="smc_form">
     <?php settings_fields( 'smc-settings-group' ); ?>
     <?php do_settings_sections( 'smc-settings-group' ); ?>
+    <p>
+    Problems with installing? Read this article: <a href="http://duco.cc/easily-post-to-twitter-through-wordpress/">http://duco.cc/easily-post-to-twitter-through-wordpress/</a>
+    </p>
 	<h3>Twitter</h3>
     <table class="form-table">
         <tr valign="top">
@@ -46,6 +49,11 @@ $(document).ready(function(){
 	<p>
 		Send URL with Tweet<br />
 		<input type="checkbox" name="smc_send_url" value="1"<?php echo (esc_attr( get_option('smc_send_url') ) === "1" ? " checked" : ""); ?> />
+	</p>
+
+	<p>
+		Also allow editors and authors to post to Twitter<br />
+		<input type="checkbox" name="smc_editor_author_post" value="1"<?php echo (esc_attr( get_option('smc_editor_author_post') ) === "1" ? " checked" : ""); ?> />
 	</p>
     
     <?php submit_button(); ?>

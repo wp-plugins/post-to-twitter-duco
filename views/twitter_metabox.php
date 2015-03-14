@@ -9,6 +9,6 @@ $message = get_post_meta($post->ID, "smc_twitter_message", true);
 if($message != ""):
 ?>
 <p>
-	Last message: <?php echo $message; ?>
+	Last message: <strong><?php echo $message; ?></strong>
 </p>
 <?php endif; ?>

@@ -9,8 +9,16 @@ function test_social_media(){
 	return "";
 }
 
-function smc_check_site_admin(){
+function smc_check_site_admin($not_only_admin = false){
     $currentUser = wp_get_current_user();
+    if($not_only_admin){
+    	$roles_to_check = array("administrator", "editor", "author");
+    	foreach($currentUser->roles as $role){
+    		if(in_array($role, $roles_to_check)){
+    			return true;
+    		}
+    	}
+    }
     return in_array('administrator', $currentUser->roles);
 }
 
